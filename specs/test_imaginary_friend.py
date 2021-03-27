@@ -14,7 +14,7 @@ class SmokeTest(unittest.TestCase):
         self.assertEqual(self.friend.type, 'Imaginary Friend')
 
     def test_it_has_a_dunder_repr(self):
-        expected = f'<ImaginaryFriend(name={self.friend.name},type={self.friend.type})>'
+        expected = f'<ImaginaryFriend(name=\'{self.friend.name}\',type=\'{self.friend.type}\')>'
         self.assertEqual(repr(self.friend), expected)
 
     def test_it_has_a_dunder_str(self):
@@ -32,7 +32,7 @@ class SmokeTest2(unittest.TestCase):
         self.assertEqual(self.friend_2.type, 'Friendly Ghost')
 
     def test_it_has_a_different_dunder_repr(self):
-        expected = f'<ImaginaryFriend(name={self.friend_2.name},type={self.friend_2.type})>'
+        expected = f'<ImaginaryFriend(name=\'{self.friend_2.name}\',type=\'{self.friend_2.type}\')>'
         self.assertEqual(repr(self.friend_2), expected)
 
     def test_it_has_a_different_dunder_str(self):
@@ -63,10 +63,10 @@ class SmokeTest4(unittest.TestCase):
         self.assertIsInstance(self.new_friend, ImaginaryFriend)
         self.assertEqual(self.new_friend.name, self.friend_params['name'])
         self.assertEqual(self.new_friend.type, self.friend_params['type'])
-       
+
     def test_it_has_dunders(self):
         expected_str = f'{self.new_friend.name}, The {self.new_friend.type}'
-        expected_repr = f'<ImaginaryFriend(name={self.new_friend.name},type={self.new_friend.type})>'
+        expected_repr = f'<ImaginaryFriend(name=\'{self.new_friend.name}\',type=\'{self.new_friend.type}\')>'
         self.assertEqual(str(self.new_friend), expected_str)
         self.assertEqual(repr(self.new_friend), expected_repr)
 
