@@ -43,3 +43,7 @@ class TestImaginaryFriend(unittest.TestCase):
         friend = ImaginaryFriend()
         expected = f'{friend.name}, The {friend.type}'
         self.assertEqual(str(friend), expected)
+
+
+if __name__ == '__main__':
+    unittest.main()
